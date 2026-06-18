@@ -1,96 +1,144 @@
 <!DOCTYPE html>
-<html>
+<html lang="uz">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abu Bakr | Anime Gamer</title>
+<title>Abu Bakr | Anime Gamer Profile</title>
 
 <style>
 body{
-background:#0f172a;
-color:white;
+margin:0;
 font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#020617,#111827,#1e1b4b);
+color:white;
 text-align:center;
-padding:20px;
+}
+
+.hero{
+padding:40px 20px;
 }
 
 .card{
-background:#1e293b;
-padding:20px;
-border-radius:20px;
-max-width:700px;
-margin:auto;
+background:rgba(15,23,42,.9);
+max-width:800px;
+margin:25px auto;
+padding:25px;
+border-radius:25px;
+box-shadow:0 0 25px #38bdf8;
 }
 
 h1{
+font-size:42px;
 color:#38bdf8;
+text-shadow:0 0 15px #38bdf8;
 }
 
 h2{
 color:#f59e0b;
 }
 
-ul{
-list-style:none;
-padding:0;
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:15px;
 }
 
-li{
-padding:8px;
+.item{
+background:#1e293b;
+padding:15px;
+border-radius:15px;
+box-shadow:0 0 10px #0ea5e9;
 }
 
 button{
-background:#38bdf8;
+background:#0ea5e9;
 color:white;
 border:none;
-padding:12px 20px;
-border-radius:10px;
+padding:14px 22px;
+border-radius:14px;
 font-size:18px;
 }
 
 button:hover{
-background:#0284c7;
+background:#2563eb;
+}
+
+.footer{
+padding:25px;
+color:#94a3b8;
 }
 </style>
 </head>
 
 <body>
 
-<div class="card">
-
+<section class="hero">
 <h1>Abu Bakr</h1>
+<p>Anime • Manhwa • Mobile Gamer • Termux Learner</p>
+</section>
 
-<p>Anime va mobil o'yin ishqibozi</p>
+<div class="card">
+<h2>🔥 About Me</h2>
+<p>Men anime, manhwa va mobil o'yinlarni yaxshi ko'raman. Bu mening GitHub Pages orqali yaratilgan Anime Gamer Profile v2 saytim.</p>
+</div>
 
-<h2>Sevimli Anime</h2>
+<div class="card">
+<h2>⚔️ Sevimli Anime</h2>
+<div class="grid">
+<div class="item">Solo Leveling</div>
+<div class="item">Re:Zero</div>
+<div class="item">Mushoku Tensei</div>
+</div>
+</div>
 
-<ul>
-<li>⚔️ Solo Leveling</li>
-<li>🌙 Re:Zero</li>
-<li>🔥 Mushoku Tensei</li>
-</ul>
+<div class="card">
+<h2>🎮 Sevimli O'yinlar</h2>
+<div class="grid">
+<div class="item">Genshin Impact</div>
+<div class="item">Wuthering Waves</div>
+<div class="item">Nikke</div>
+<div class="item">Honkai Star Rail</div>
+<div class="item">Punishing Gray Raven</div>
+<div class="item">Mobile Legends</div>
+</div>
+</div>
 
-<h2>Sevimli O'yinlar</h2>
+<div class="card">
+<h2>💎 Sevimli Qahramonlar</h2>
+<div class="grid">
+<div class="item">Subaru</div>
+<div class="item">Rudeus</div>
+<div class="item">Makoto</div>
+<div class="item">Hae-Su</div>
+</div>
+</div>
 
-<ul>
-<li>🎮 Genshin Impact</li>
-<li>⚡ Wuthering Waves</li>
-<li>🤖 Nikke</li>
-<li>🌌 Honkai Star Rail</li>
-</ul>
+<div class="card">
+<h2>🚀 My Skills</h2>
+<div class="grid">
+<div class="item">Termux</div>
+<div class="item">GitHub</div>
+<div class="item">yt-dlp</div>
+<div class="item">gallery-dl</div>
+<div class="item">FFmpeg</div>
+<div class="item">HTML / CSS</div>
+</div>
+</div>
 
-<button onclick="showMessage()">
-Salom ber
-</button>
+<div class="card">
+<h2>😎 Status</h2>
+<button onclick="powerUp()">Power Up</button>
+<p id="status">Kutilyapti...</p>
+</div>
 
-<p id="msg"></p>
-
+<div class="footer">
+<p>Made with Termux + GitHub Pages by Abu Bakr</p>
 </div>
 
 <script>
-function showMessage(){
-document.getElementById("msg").innerHTML =
-"Salom Abu! Sayting ishlayapti 😎";
+function powerUp(){
+document.getElementById("status").innerHTML =
+"Abu Gamer Mode yoqildi 🔥";
 }
 </script>
 
