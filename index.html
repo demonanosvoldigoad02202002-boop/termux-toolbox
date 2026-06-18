@@ -3,64 +3,155 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abu Anime Gamer OS</title>
+<title>Abu Anime Gamer OS v3</title>
+
 <style>
 *{box-sizing:border-box}
+
 body{
 margin:0;
-font-family:Inter,Arial,sans-serif;
+font-family:Arial,sans-serif;
 color:white;
 min-height:100vh;
-background:
-radial-gradient(circle at top left,#38bdf855,transparent 35%),
-radial-gradient(circle at bottom right,#a855f755,transparent 35%),
-linear-gradient(135deg,#020617,#0f172a,#111827);
 overflow:hidden;
+background:
+radial-gradient(circle at 20% 10%,#38bdf866,transparent 30%),
+radial-gradient(circle at 80% 80%,#a855f766,transparent 30%),
+linear-gradient(135deg,#020617,#0f172a,#111827);
 }
-.top{
-padding:26px 22px 10px;
+
+.loader{
+position:fixed;
+inset:0;
+background:#020617;
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:99;
+animation:hide 2.2s forwards;
 }
+
+.loader h1{
+color:#38bdf8;
+text-shadow:0 0 25px #38bdf8;
+}
+
+@keyframes hide{
+0%,80%{opacity:1}
+100%{opacity:0;visibility:hidden}
+}
+
+.header{
+padding:24px 20px 10px;
+}
+
+.profile{
+background:#ffffff12;
+border:1px solid #ffffff22;
+backdrop-filter:blur(18px);
+border-radius:28px;
+padding:18px;
+box-shadow:0 0 35px #38bdf844;
+}
+
+.avatar{
+width:76px;
+height:76px;
+border-radius:50%;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:38px;
+background:linear-gradient(135deg,#38bdf8,#a855f7);
+box-shadow:0 0 25px #38bdf8;
+}
+
 h1{
-margin:0;
-font-size:32px;
+margin:14px 0 6px;
+font-size:34px;
+text-align:center;
 background:linear-gradient(90deg,#38bdf8,#a855f7,#f472b6);
 -webkit-background-clip:text;
 color:transparent;
 }
-.sub{color:#cbd5e1;margin-top:8px}
+
+.sub{
+text-align:center;
+color:#cbd5e1;
+font-size:15px;
+}
+
+.status{
+margin-top:14px;
+padding:10px;
+border-radius:18px;
+background:#020617aa;
+text-align:center;
+color:#facc15;
+}
+
 .apps{
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:18px;
-padding:20px;
+gap:16px;
+padding:18px 20px 110px;
 }
+
 .app{
+background:#ffffff14;
 border:1px solid #ffffff22;
-background:#ffffff12;
-backdrop-filter:blur(18px);
+backdrop-filter:blur(20px);
 border-radius:26px;
-padding:22px 14px;
+padding:20px 12px;
 text-align:center;
-box-shadow:0 20px 40px #0008;
+box-shadow:0 15px 30px #0008;
+transition:.2s;
 }
-.app:active{transform:scale(.96)}
-.emoji{font-size:42px}
-.app span{display:block;margin-top:10px;font-size:18px;font-weight:700}
+
+.app:active{
+transform:scale(.94);
+}
+
+.emoji{
+font-size:40px;
+}
+
+.app span{
+display:block;
+margin-top:10px;
+font-weight:800;
+font-size:17px;
+}
+
 .window{
 display:none;
 position:fixed;
-left:16px;right:16px;top:145px;
+top:135px;
+left:14px;
+right:14px;
+max-height:62vh;
+overflow:auto;
 padding:20px;
-border-radius:28px;
+border-radius:30px;
+background:#0f172add;
 border:1px solid #ffffff33;
-background:#0f172acc;
-backdrop-filter:blur(22px);
-box-shadow:0 0 45px #38bdf855;
-z-index:5;
+backdrop-filter:blur(24px);
+box-shadow:0 0 50px #38bdf855;
+z-index:20;
 animation:pop .2s ease;
 }
-@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
-.window h2{margin-top:0;color:#fbbf24}
+
+@keyframes pop{
+from{transform:translateY(25px) scale(.94);opacity:0}
+to{transform:translateY(0) scale(1);opacity:1}
+}
+
+.window h2{
+margin-top:0;
+color:#fbbf24;
+}
+
 .close{
 float:right;
 border:0;
@@ -68,103 +159,174 @@ background:#ef4444;
 color:white;
 border-radius:12px;
 padding:7px 12px;
+font-weight:bold;
 }
+
 .item{
 margin:10px 0;
-padding:13px;
-border-radius:16px;
+padding:14px;
+border-radius:18px;
 background:#ffffff12;
 border:1px solid #ffffff18;
 }
+
+.badge{
+display:inline-block;
+margin:6px;
+padding:8px 12px;
+border-radius:999px;
+background:#0ea5e955;
+border:1px solid #38bdf8;
+}
+
 .dock{
 position:fixed;
-left:16px;right:16px;bottom:16px;
-height:76px;
-border-radius:28px;
-background:#020617cc;
-border:1px solid #38bdf855;
+left:14px;
+right:14px;
+bottom:14px;
+height:78px;
+border-radius:30px;
+background:#020617dd;
+border:1px solid #38bdf866;
 backdrop-filter:blur(20px);
 display:flex;
 align-items:center;
 justify-content:space-around;
 box-shadow:0 0 35px #38bdf855;
 }
+
 .start{
 border:0;
 padding:13px 20px;
 border-radius:18px;
 color:white;
-font-weight:800;
+font-weight:900;
 background:linear-gradient(135deg,#0ea5e9,#8b5cf6);
 }
-.clock{font-size:22px;color:#38bdf8;font-weight:900}
+
+.clock{
+font-size:22px;
+color:#38bdf8;
+font-weight:900;
+}
+
+.small{
+font-size:13px;
+color:#94a3b8;
+}
 </style>
 </head>
+
 <body>
 
-<div class="top">
-<h1>Abu Gamer OS</h1>
-<div class="sub">Anime • Manhwa • Mobile Games • Termux</div>
+<div class="loader">
+<h1>Loading Abu OS...</h1>
+</div>
+
+<div class="header">
+<div class="profile">
+<div class="avatar">😎</div>
+<h1>Abu Bakr</h1>
+<div class="sub">Anime • Manhwa • Mobile Gamer • Termux Builder</div>
+<div class="status" id="profileStatus">Status: Gamer Mode kutilyapti...</div>
+</div>
 </div>
 
 <div class="apps">
+<div class="app" onclick="openWin('about')"><div class="emoji">👑</div><span>About</span></div>
 <div class="app" onclick="openWin('anime')"><div class="emoji">⚔️</div><span>Anime</span></div>
 <div class="app" onclick="openWin('games')"><div class="emoji">🎮</div><span>Games</span></div>
+<div class="app" onclick="openWin('manhwa')"><div class="emoji">📖</div><span>Manhwa</span></div>
 <div class="app" onclick="openWin('termux')"><div class="emoji">💻</div><span>Termux</span></div>
 <div class="app" onclick="openWin('github')"><div class="emoji">🐙</div><span>GitHub</span></div>
 </div>
 
+<div id="about" class="window">
+<button class="close" onclick="closeWin('about')">X</button>
+<h2>👑 About Abu</h2>
+<div class="item">Men anime, manhwa va mobil o‘yinlarni yaxshi ko‘raman.</div>
+<div class="item">Bu sayt Android + Termux + GitHub Pages orqali yaratildi.</div>
+<span class="badge">Anime Fan</span>
+<span class="badge">Mobile Gamer</span>
+<span class="badge">Termux Learner</span>
+</div>
+
 <div id="anime" class="window">
 <button class="close" onclick="closeWin('anime')">X</button>
-<h2>Anime Vault</h2>
+<h2>⚔️ Anime Vault</h2>
 <div class="item">Solo Leveling</div>
 <div class="item">Re:Zero</div>
 <div class="item">Mushoku Tensei</div>
-<div class="item">Subaru • Rudeus • Makoto</div>
+<div class="item">Subaru • Rudeus • Makoto • Fate</div>
 </div>
 
 <div id="games" class="window">
 <button class="close" onclick="closeWin('games')">X</button>
-<h2>Game Library</h2>
+<h2>🎮 Game Library</h2>
 <div class="item">Genshin Impact</div>
 <div class="item">Wuthering Waves</div>
 <div class="item">Nikke</div>
 <div class="item">Honkai Star Rail</div>
+<div class="item">Punishing Gray Raven</div>
 <div class="item">Mobile Legends</div>
+</div>
+
+<div id="manhwa" class="window">
+<button class="close" onclick="closeWin('manhwa')">X</button>
+<h2>📖 Manhwa Zone</h2>
+<div class="item">Sevimli qahramon: Hae-Su</div>
+<div class="item">Слёзы на увядшем цветке</div>
 </div>
 
 <div id="termux" class="window">
 <button class="close" onclick="closeWin('termux')">X</button>
-<h2>Termux Tools</h2>
+<h2>💻 Termux Tools</h2>
 <div class="item">gallery-dl ✅</div>
 <div class="item">yt-dlp ✅</div>
 <div class="item">ffmpeg ✅</div>
 <div class="item">aria2 ✅</div>
-<div class="item">git + GitHub ✅</div>
+<div class="item">git + GitHub SSH ✅</div>
 </div>
 
 <div id="github" class="window">
 <button class="close" onclick="closeWin('github')">X</button>
-<h2>GitHub Hub</h2>
+<h2>🐙 GitHub Hub</h2>
 <div class="item">Repo: termux-toolbox</div>
-<div class="item">Pages: Online ✅</div>
+<div class="item">Branch: main / dev</div>
+<div class="item">GitHub Pages: Online ✅</div>
 <div class="item">Built from Android + Termux</div>
 </div>
 
 <div class="dock">
-<button class="start" onclick="alert('Abu Gamer Mode: ON 🔥')">Start</button>
-<span>Cyber OS</span>
+<button class="start" onclick="powerUp()">Power</button>
+<span>Anime Gamer OS v3</span>
 <span class="clock" id="clock"></span>
 </div>
 
 <script>
-function openWin(id){document.getElementById(id).style.display="block"}
-function closeWin(id){document.getElementById(id).style.display="none"}
+function openWin(id){
+document.querySelectorAll('.window').forEach(w=>w.style.display='none');
+document.getElementById(id).style.display='block';
+}
+
+function closeWin(id){
+document.getElementById(id).style.display='none';
+}
+
+function powerUp(){
+document.getElementById("profileStatus").innerHTML =
+"Status: Abu Gamer Mode ON 🔥";
+}
+
 function updateClock(){
 let n=new Date();
-clock.innerHTML=n.getHours().toString().padStart(2,'0')+":"+n.getMinutes().toString().padStart(2,'0');
+document.getElementById("clock").innerHTML =
+n.getHours().toString().padStart(2,'0') + ":" +
+n.getMinutes().toString().padStart(2,'0');
 }
-setInterval(updateClock,1000);updateClock();
+
+setInterval(updateClock,1000);
+updateClock();
 </script>
 
 </body>
