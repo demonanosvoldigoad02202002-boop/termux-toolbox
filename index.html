@@ -1,10 +1,98 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Abu Site</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abu Bakr | Anime Gamer</title>
+
+<style>
+body{
+background:#0f172a;
+color:white;
+font-family:Arial,sans-serif;
+text-align:center;
+padding:20px;
+}
+
+.card{
+background:#1e293b;
+padding:20px;
+border-radius:20px;
+max-width:700px;
+margin:auto;
+}
+
+h1{
+color:#38bdf8;
+}
+
+h2{
+color:#f59e0b;
+}
+
+ul{
+list-style:none;
+padding:0;
+}
+
+li{
+padding:8px;
+}
+
+button{
+background:#38bdf8;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:10px;
+font-size:18px;
+}
+
+button:hover{
+background:#0284c7;
+}
+</style>
 </head>
+
 <body>
-<h1>Salom Abu!</h1>
-<p>Mening birinchi GitHub Pages saytim.</p>
+
+<div class="card">
+
+<h1>Abu Bakr</h1>
+
+<p>Anime va mobil o'yin ishqibozi</p>
+
+<h2>Sevimli Anime</h2>
+
+<ul>
+<li>⚔️ Solo Leveling</li>
+<li>🌙 Re:Zero</li>
+<li>🔥 Mushoku Tensei</li>
+</ul>
+
+<h2>Sevimli O'yinlar</h2>
+
+<ul>
+<li>🎮 Genshin Impact</li>
+<li>⚡ Wuthering Waves</li>
+<li>🤖 Nikke</li>
+<li>🌌 Honkai Star Rail</li>
+</ul>
+
+<button onclick="showMessage()">
+Salom ber
+</button>
+
+<p id="msg"></p>
+
+</div>
+
+<script>
+function showMessage(){
+document.getElementById("msg").innerHTML =
+"Salom Abu! Sayting ishlayapti 😎";
+}
+</script>
+
 </body>
 </html>
